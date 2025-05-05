@@ -5,17 +5,15 @@
 
 ### Set up your environment (For set up in Windows, please refer to this website https://modelcontextprotocol.io/quickstart/server.)
 
-Install `uv`
+Install `uv`.
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 Restart your terminal after installing `uv`.
 
-### Set up project:
-Project directory: MCP-ARM-Live-Data
-
+### Set up project
 ```bash
-# Create a new directory for our project or initialize it with an existing folder
+# Create a new directory for this project or initialize it with an existing folder
 uv init MCP-ARM-Live-Data
 cd MCP-ARM-Live-Data
 # Create virtual environment and activate it
@@ -26,7 +24,7 @@ uv add "mcp[cli]" "pyyaml" "requests"
 
 ```
 
-### Build docker image
+### Build docker image.
 Doacker Image Name: `arm-live-data`
 ```bash
 docker build -t arm-live-data .
@@ -66,21 +64,21 @@ Based on my analysis of the relative humidity mean (rh_mean) data from the nsame
 
 ### Key Findings
 
-1. ***Physically Impossible Values**
+1. **Physically Impossible Values**
    - The data contains values exceeding 100% relative humidity (up to 101.4%)
    - Approximately 33.3% of the sampled values exceed 100% RH
    - From a physical perspective, relative humidity cannot exceed 100% under normal atmospheric conditions
 
-2. ***Quality Control Failures**
+2. **Quality Control Failures**
    - Despite these physically impossible values, all quality control flags (qc_rh_mean) are set to 0
    - This indicates the automated quality control system failed to identify these obvious anomalies
 
-3. ***Potential Sensor Issues**
+3. **Potential Sensor Issues**
    - The higher values (>100%) appear toward the end of the day
    - This pattern suggests possible sensor drift or calibration issues
    - The range of values (7.1%) is relatively wide, indicating variability that could be suspicious
 
-4. ***Environmental Context Considerations**
+4. **Environmental Context Considerations**
    - The data comes from the North Slope of Alaska (Barrow) in late September
    - Arctic environments present challenges for humidity sensors:
      - Frost formation on sensors
@@ -99,19 +97,19 @@ The presence of values exceeding 100% RH is a clear indicator of sensor issues, 
 
 ### Recommendations
 
-1. ***Data Usage Caution**
+1. **Data Usage Caution**
    - Users of this data should treat RH values with skepticism, especially those exceeding 100%
    - Consider applying a correction factor or flagging values >100% as questionable
 
-2. ***Quality Control Review**
+2. **Quality Control Review**
    - The automated QC system should be reviewed to ensure it properly flags physically impossible values
    - Consider implementing additional QC checks specifically for the 100% RH threshold
 
-3. ***Instrument Maintenance**
+3. **Instrument Maintenance**
    - Check sensor calibration and potentially recalibrate
    - Ensure proper heating of the sensor to prevent condensation in high-humidity conditions
 
-4. ***Metadata Enhancement**
+4. **Metadata Enhancement**
    - Update dataset documentation to note these issues for data users
    - Consider adding specific quality flags for supersaturation conditions
 
