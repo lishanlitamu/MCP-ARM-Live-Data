@@ -1,8 +1,7 @@
 import requests
 import json
 from pathlib import Path
-import yaml
-from typing import Dict, List, Optional, Union
+from typing import Dict, Optional
 from mcp.server.fastmcp import FastMCP
 import os
 import sys

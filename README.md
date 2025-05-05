@@ -1,5 +1,5 @@
 # MCP Server for ARM Live Data
-
+An MCP (Model Context Protocol) server for accessing ARM Live Data databases from the ARM user facility program.
 
 ## Usage
 
@@ -25,7 +25,7 @@ uv venv
 source .venv/bin/activate
 
 # Install dependencies
-uv add "mcp[cli]" "pyyaml" "requests"
+uv add "mcp[cli]" "requests"
 
 ```
 
@@ -45,6 +45,8 @@ docker build -t arm-live-data .
 
 ### Add this MCP server to Claude Desktop app.
 To use this server with the Claude Desktop app, add the following configuration to the "mcpServers" section of your `claude_desktop_config.json`:
+
+<img src="./images/claude-desktop-arm-live-data.jpeg" alt="MCP server on Claude Desktop" width="500"/>
 
 ```json
 {
