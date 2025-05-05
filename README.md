@@ -3,9 +3,12 @@
 
 ## Usage
 
-### Set up your environment (For set up in Windows, please refer to this website https://modelcontextprotocol.io/quickstart/server.)
+### Set up your environment
+
+_For setup in Windows, please refer to the [official guide](https://modelcontextprotocol.io/quickstart/server)._
 
 Install `uv`.
+
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
@@ -57,7 +60,7 @@ To use this server with the Claude Desktop app, add the following configuration 
 ## Examples
 <img src="./images/example-query-live-data.jpeg" alt="MCP ARM Live Data" width="500"/>
 
-## Final Response:
+## Response from Claude:
 ## Evaluation of Data Quality Issues in the rh_mean Variable (Sept 30, 2020)
 
 Based on my analysis of the relative humidity mean (rh_mean) data from the nsametC1.b1 datastream for September 30, 2020, I've identified several suspicious data quality issues that warrant attention.
