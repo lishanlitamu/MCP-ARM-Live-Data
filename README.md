@@ -19,9 +19,11 @@ Restart your terminal after installing `uv`.
 # Create a new directory for this project or initialize it with an existing folder
 uv init MCP-ARM-Live-Data
 cd MCP-ARM-Live-Data
+
 # Create virtual environment and activate it
 uv venv
 source .venv/bin/activate
+
 # Install dependencies
 uv add "mcp[cli]" "pyyaml" "requests"
 
@@ -55,7 +57,26 @@ To use this server with the Claude Desktop app, add the following configuration 
 }
 ```
 
+## Components
 
+### Tools
+
+1. **query_live_data**
+   - Description: Retrieves meteorological data from the ARM Live Data API for a specified datastream and time range
+   - Parameters:
+     - `datastream`: The datastream identifier to query (required), following the format [site][timeIntegration][inst][facility].[dataLvl], e.g. sgpmetE11.b1
+     - `start_time`: Start time for data query (optional, defaults to 1 hour ago) in format YYYY-MM-DD or YYYY-MM-DDThh:mm:sssZ
+     - `end_time`: End time for data query (optional, defaults to current time) in format YYYY-MM-DD or YYYY-MM-DDThh:mm:sssZ
+   - Returns: Dictionary containing the requested live data, including metadata and file information
+
+2. **return_cdf_data**
+   - Description: Downloads a CDF file from the ARM Live Data API and extracts data for a specific meteorological variable
+   - Parameters:
+     - `cdf_file`: The complete CDF filename to download (e.g. 'nsametC1.b1.20200101.000000.cdf')
+     - `variable`: The specific meteorological variable to extract (e.g. 'rh_mean' for relative humidity)
+   - Returns: Numpy array containing the time series data for the specified variable
+
+_For more details about ARM Live Data API and datastream formats, please refer to the [official guide](https://adc.arm.gov/armlive/register#overview)._
 
 ## Examples
 <img src="./images/example-query-live-data.jpeg" alt="MCP ARM Live Data" width="500"/>
