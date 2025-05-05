@@ -29,6 +29,14 @@ uv add "mcp[cli]" "pyyaml" "requests"
 
 ```
 
+### Create `.env` to store ARM user ID and access token. 
+_To retrieve your access token, please refer to the [official guide](https://adc.arm.gov/armlive/register#overview)._
+
+```
+ARM_USERNAME=user_id
+ARM_API_TOKEN=access_token
+```
+
 ### Build docker image.
 Doacker Image Name: `arm-live-data`
 ```bash
