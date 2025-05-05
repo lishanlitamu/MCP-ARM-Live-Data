@@ -1,4 +1,4 @@
-# MCP Server for ARM Live Data
+# MCP Server for ARM Live Data database
 An MCP (Model Context Protocol) server for accessing ARM Live Data databases from the ARM user facility program.
 
 ## Usage
