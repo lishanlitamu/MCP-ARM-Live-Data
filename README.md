@@ -3,7 +3,8 @@
 
 
 
-![MCP ARM Live Data](./images/example-query-live-data.jpeg)
+<img src="./images/example-query-live-data.jpeg" alt="MCP ARM Live Data" width="300"/>
+
 
 # Evaluation of Data Quality Issues in the rh_mean Variable (Sept 30, 2020)
 
